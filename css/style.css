@@ -1,0 +1,25 @@
+body {
+    padding:0px;
+    margin:0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-family: faster one;
+}
+
+.heroes {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.card-title {
+    font-family: faster one;
+    font-size:1.5rem;
+}
