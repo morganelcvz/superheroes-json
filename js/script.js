@@ -49,16 +49,48 @@ const data = {
     ]
 }
 
-data.squadName 
-data.homeTown 
-data.formed 
-data.secretBase 
-data.active
+// data.squadName 
+// data.homeTown 
+// data.formed 
+// data.secretBase 
+// data.active
 
-for (var i = 0; i < data.members.length; i++) {
-    console.log(data.members[i].name)
-    console.log(data.members[i].age)
-    console.log(data.members[i].secretIdentity)
-    console.log(data.members[i].powers)
+// for (var i = 0; i < data.members.length; i++) {
+//     console.log(data.members[i].name)
+//     console.log(data.members[i].age)
+//     console.log(data.members[i].secretIdentity)
+//     console.log(data.members[i].powers)
+// }
+
+function showdata(jsonObj) {
+    var members = jsonObj["members"];
+  
+    for (var i = 0; i < data.members.length; i++) {
+      var mycard = document.createElement("card");
+      var myh5 = document.createElement("h5");
+      var mylist = document.createElement("ul");
+      var myl1 = document.createElement("li");
+      var myl2 = document.createElement("li");
+      var myl3 = document.createElement("li");
+  
+      myh5.textContent = members[i].name;
+      myl1.textContent = "Age: " + members[i].age;
+      myl2.textContent = "Secret identity: " + members[i].secretIdentity;
+      myl3.textContent = "Superpowers:";
+  
+      var superPowers = members[i].powers;
+      for (var j = 0; j < superPowers.length; j++) {
+        var listItem = document.createElement("li");
+        listItem.textContent = superPowers[j];
+        myList.appendChild(listItem);
+      }
+
+      mycard.appendChild(myH5);
+      mycard.appendChild(myl1);
+      mycard.appendChild(myl2);
+      mycard.appendChild(myl3);
+      mycard.appendChild(mylist);
+  
+      section.appendChild(mycard);
+    }
 }
-
